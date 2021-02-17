@@ -1,0 +1,21 @@
+Exercise 3:
+a)
+I used line_profiler and memory_profiler to solve this exercise.
+From time_matmult.txt we see that matmult.py spends 33.9% of the time on line
+29 and 64% of the time on line 30.
+The largest memory increments occur on line 12, 17 and 22 when the X, Y
+and result arrays are built, as can be seen in memory_matmult.txt.
+
+b)
+As can be seen in time_euler.txt, most time is spent in the fast_phi() function. 
+The fast_phi() function makes a call to the function factorize() which is where it spends 85.7% of
+its time. We should thus try to optimize the factorize() function. We see that most time in factorize() 
+is spent in the "for p in primes" loop. We could optimize the script by looking over lines 26-31.
+
+The only significant memory increment occurs according to memory_euler.txt on line 53 where the array of
+factors gets assigned to the variable factors.
+
+c)
+From time_optimized.txt we see that the way I have written it in the function optimized() results in a total
+time of 0.02 s, whereas the main() function takes 20.3 seconds. The big difference is the avoiding the for loop
+and instead using numpy's vectorized matrix operations.

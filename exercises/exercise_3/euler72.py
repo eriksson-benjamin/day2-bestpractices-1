@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 from math import ceil,sqrt
+
 @profile
 def gen_primes(n):
     l = range(2,n)
@@ -32,7 +33,7 @@ def factorize(n,primes):
         factors.append(n)
     return factors
 
-    
+@profile
 def phi(n,primes):
     factors = factorize(n,primes)
     p = 1
@@ -57,12 +58,16 @@ def fast_phi(n,primes):
         else:
             phi *= (factors[i]-1)
     return phi
+@profile
+def main():
+    primes = gen_primes(1000)
+    m = 10000
+    #m = 8
+    fraq = 0
+    for i in range(2,m+1):
+        fraq += fast_phi(i,primes)
+    
+    print(fraq)
 
-primes = gen_primes(1000)
-m = 10000
-#m = 8
-fraq = 0
-for i in range(2,m+1):
-    fraq += fast_phi(i,primes)
-
-print(fraq)
+if __name__ == '__main__':
+    main()
