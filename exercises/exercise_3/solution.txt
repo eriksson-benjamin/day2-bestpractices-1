@@ -15,6 +15,7 @@ is spent in the "for p in primes" loop. We could optimize the script by looking 
 The only significant memory increment occurs according to memory_euler.txt on line 53 where the array of
 factors gets assigned to the variable factors.
 
+
 c)
 From time_optimized.txt we see that the way I have written it in the function optimized() results in a total
 time of 0.02 s, whereas the main() function takes 20.3 seconds. The big difference is the avoiding the for loop
